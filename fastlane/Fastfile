@@ -1,3 +1,18 @@
 lane :test do
-  git_status
+  
+  #To get the status of the current directory
+  if !git_status.empty?
+    UI.message("WARNING - the directory is not empty")
+  end
+
+  #To get the status of one file or directory Ex: "M version.txt"
+  if !git_status(path: "./version.txt").empty?
+    UI.message("WARNING - the directory is not empty")
+  end
+
+  #To get the status of several files or directories use Ex: "M version.txt D changelog.txt"
+  if !git_status(path: ["./version.txt", "./changelog.txt"]).empty?
+    UI.message("WARNING - the directory is not empty")
+  end
+  
 end
