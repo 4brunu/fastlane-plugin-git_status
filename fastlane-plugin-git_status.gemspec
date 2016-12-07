@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'fastlane-plugin-git_status'
   spec.version       = Fastlane::GitStatus::VERSION
   spec.author        = %q{Bruno Coelho}
-  spec.email         = %q{Bruno.Coelho@medicineone.net}
+  spec.email         = %q{4brunu@gmail.com}
 
   spec.summary       = %q{Show the status of one or multiple files/directories}
   spec.homepage      = "https://github.com/4brunu/fastlane-plugin-git_status"
