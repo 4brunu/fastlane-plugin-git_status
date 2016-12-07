@@ -10,7 +10,7 @@ module Fastlane
         end
 
         result = Actions.sh("git status --porcelain #{paths}")
-        UI.success("git status \"#{params[:path]}\" \n \"#{result}\"")
+        UI.success("git status --porcelain \"#{params[:path]}\" \n \"#{result}\"")
         return result
 
       end
@@ -35,7 +35,8 @@ module Fastlane
         [
           FastlaneCore::ConfigItem.new(key: :path,
                                        description: "The file or directory you want to see the status",
-                                       optional: false,
+                                       optional: true,
+                                       default_value: ".",
                                        type: [String, Array],
                                        verify_block: proc do |value|
 
