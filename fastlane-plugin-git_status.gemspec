@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = %q{Bruno.Coelho@medicineone.net}
 
   spec.summary       = %q{Show the status of one or multiple files/directories}
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-git_status"
+  spec.homepage      = "https://github.com/4brunu/fastlane-plugin-git_status"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
