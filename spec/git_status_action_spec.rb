@@ -2,7 +2,12 @@ describe Fastlane::Actions::GitStatusAction do
   describe '#run' do
     
     it "call action without parameters" do
-      result = Fastlane::Actions::GitStatusAction(path: nil)
+      result = Fastlane::FastFile.new.parse("lane :test do
+       	                                        git_status
+     	                                        end")
+      .runner
+      .execute(:test)
+      
       expect(result).to eq("git status --porcelain .")
     end
     
