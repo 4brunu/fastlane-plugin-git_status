@@ -2,7 +2,6 @@ module Fastlane
   module Actions
     class GitStatusAction < Action
       def self.run(params)
-
         if params[:path].kind_of?(String)
           paths = params[:path].shellescape
         else
@@ -12,7 +11,6 @@ module Fastlane
         result = Actions.sh("git status --porcelain #{paths}")
         UI.success("git status --porcelain #{paths} \n #{result}")
         return result
-
       end
 
       def self.description
@@ -49,7 +47,7 @@ module Fastlane
                                          else
                                            UI.user_error!("Wrong param type path '#{value}'")
                                          end
-                                       end),
+                                       end)
         ]
       end
 
