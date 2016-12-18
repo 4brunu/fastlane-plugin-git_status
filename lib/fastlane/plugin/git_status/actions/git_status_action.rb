@@ -10,7 +10,7 @@ module Fastlane
         end
 
         result = Actions.sh("git status --porcelain #{paths}")
-        UI.success("git status --porcelain \"#{params[:path]}\" \n \"#{result}\"")
+        UI.success("git status --porcelain #{paths} \n #{result}")
         return result
 
       end
@@ -36,12 +36,11 @@ module Fastlane
           FastlaneCore::ConfigItem.new(key: :path,
                                        description: "The file or directory you want to see the status",
                                        optional: true,
-                                       default_value: ".",
-                                       type: [String, Array],
+                                       default_value: '.',
+                                       is_string: false,
                                        verify_block: proc do |value|
-
                                          if value.kind_of?(String)
-                                           paths = params[:path].shellescape
+                                           paths = value.shellescape
                                            UI.user_error!("Couldn't find file at path '#{value}'") unless File.exist?(paths)
                                          elsif value.kind_of?(Array)
                                            value.each do |x|
@@ -50,8 +49,7 @@ module Fastlane
                                          else
                                            UI.user_error!("Wrong param type path '#{value}'")
                                          end
-
-                                       end)
+                                       end),
         ]
       end
 
