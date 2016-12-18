@@ -1,6 +1,7 @@
 # git_status plugin
 
 [![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-git_status)
+[![Build Status](https://travis-ci.org/4brunu/fastlane-plugin-git_status.svg?branch=master)](https://travis-ci.org/4brunu/fastlane-plugin-git_status)
 
 ## Getting Started
 
