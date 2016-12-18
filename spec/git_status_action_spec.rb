@@ -12,12 +12,22 @@ describe Fastlane::Actions::GitStatusAction do
     end
     
     it "call action with a string parameter" do
-      result = Fastlane::Actions::GitStatusAction.run(path: "./")
+      result = Fastlane::FastFile.new.parse("lane :test do
+       	                                        git_status(path: './')
+     	                                        end")
+      .runner
+      .execute(:test)
+      
       expect(result).to eq("git status --porcelain ./")
     end
     
     it "call action with an array parameter" do
-      result = Fastlane::Actions::GitStatusAction.run(path: ["../", "./"])
+      result = Fastlane::FastFile.new.parse("lane :test do
+       	                                        git_status(path: ['../', './'])
+     	                                        end")
+      .runner
+      .execute(:test)
+      
       expect(result).to eq("git status --porcelain ../ ./")
     end
     
