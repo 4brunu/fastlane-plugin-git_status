@@ -25,7 +25,7 @@ To get the status of one file or directory Ex: "M version.txt"
 
 To get the status of several files or directories use Ex: "M version.txt D changelog.txt"
 
-git_status(path: ["./version.txt", "./changelog.txt"])
+`git_status(path: ["./version.txt", "./changelog.txt"])`
 
 
 ## Example
