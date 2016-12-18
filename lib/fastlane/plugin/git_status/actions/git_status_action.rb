@@ -47,9 +47,9 @@ module Fastlane
                                            value.each do |x|
                                              UI.user_error!("Couldn't find file at path '#{x}'") unless File.exist?(x)
                                            end
+                                         else
+                                           UI.user_error!("Wrong param type path '#{value}'")
                                          end
-
-                                         UI.user_error!("Wrong param type path '#{value}'")
 
                                        end)
         ]
